@@ -4,7 +4,9 @@ Follow these steps to conduct a comprehensive brainstorming session.
 
 ## Phase 1: Preparation & Context
 1.  **Define the Goal**: State the objective in one sentence.
-2.  **Expansion vs. New**: Check `docs/` for existing ideas. If found, ask: "I see existing brainstorming docs for [Idea Names]. Do you want to expand one of these or start something new?"
+2.  **Expansion vs. New**: Check `docs/` for existing ideas. 
+    - *If existing ideas found*: Ask: "I see existing brainstorming docs for [Idea Names]. Do you want to expand one of these or start something new?" **Wait for response.**
+    - *If NO existing ideas found*: Automatically proceed to Step 3 and Phase 2 to suggest completely new ideas. Do not ask for permission to start suggesting.
 3.  **Context Injection**: Search [Knowledge Items (KIs)](./../resources/context-integration.md) and past logs for relevant project constraints and user preferences.
 3.  **List Constraints**: Clearly state what's *not* possible to focus the search space.
 

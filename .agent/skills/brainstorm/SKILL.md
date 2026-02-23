@@ -33,6 +33,7 @@ The skill is modularized to provide specific guidance and examples:
 ## Strategy
 1.  **Project Context**: Use [Context Integration](./resources/context-integration.md) to ground the session in KIs and logs.
     - **Expansion Check**: Before starting a new brainstorm, check if a `docs/` folder exists with previous ideas. If it does, **ask the user** if they want to brainstorm a *completely new* app idea or *expand/iterate*/create new version/edit on an existing project found in the docs.
+    - **Auto-Suggest (Clean Slate)**: If there is no `docs/` folder (or it contains no ideas), **automatically** proceed to generate completely new idea suggestions based on the user's initial prompt (or standard criteria if the prompt is open-ended).
 2.  **Identify the Objective**: Clearly define the brainstorming goal.
 3.  **Breadth First**: Use [Frameworks](./resources/frameworks.md) and [Personas](./resources/personas.md) to generate many concise ideas.
 4.  **Avoid Blandness**: Apply [AI Pitfalls](./resources/ai-pitfalls.md) strategies to ensure unique ideas.
