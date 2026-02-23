@@ -21,16 +21,32 @@ The skill is modularized to provide specific guidance and examples:
   - [Creative Session](./workflows/creative-session.md): A full structured brainstorming workflow.
 - **Resources**: Tools and frameworks to aid ideation.
   - [Brainstorming Frameworks](./resources/frameworks.md): SCAMPER, First Principles, etc.
+  - [Evaluation Frameworks](./resources/evaluation.md): SWOT, Six Thinking Hats, Impact/Effort Matrix.
+  - [Overcoming Creative Blocks](./resources/creative-blocks.md): Reverse brainstorming, perspective shifts.
+  - [Brainstorm Template](./resources/brainstorm-template.md): Standardized format for outcomes.
+  - [Ideation Personas](./resources/personas.md): Perspectives like The Skeptic, The Novice, etc.
+  - [Avoiding AI Pitfalls](./resources/ai-pitfalls.md): Breaking out of generic suggestions.
+  - [Context Integration](./resources/context-integration.md): Using KIs and logs to ground ideas.
 - **Examples**: Reference outcomes of brainstorming sessions.
   - [New Product Idea Example](./examples/new-product-idea.md).
 
 ## Strategy
-1.  **Identify the Objective**: Clearly define what needs to be brainstormed.
-2.  **Select a Framework**: Choose a relevant framework from [Resources](./resources/frameworks.md).
-3.  **Execute Workflow**: Follow the [Creative Session](./workflows/creative-session.md) workflow.
-4.  **Iterate and Refine**: Brainstorming is non-linear; feel free to jump between divergent and convergent thinking.
+1.  **Project Context**: Use [Context Integration](./resources/context-integration.md) to ground the session in KIs and logs.
+2.  **Identify the Objective**: Clearly define the brainstorming goal.
+3.  **Breadth First**: Use [Frameworks](./resources/frameworks.md) and [Personas](./resources/personas.md) to generate many concise ideas.
+4.  **Avoid Blandness**: Apply [AI Pitfalls](./resources/ai-pitfalls.md) strategies to ensure unique ideas.
+5.  **Narrow the Search**: Present 3-5 concise ideas to the user for selection.
+6.  **Human Selection**: **Wait** for user input before proceeding to depth.
+7.  **Depth Next**: Deep-dive only into the selected idea(s) using the [Creative Session](./workflows/creative-session.md) workflow.
+8.  **Evaluate & Iterate**: Use [Evaluation Frameworks](./resources/evaluation.md). If results are poor, use [Creative Blocks](./resources/creative-blocks.md) to pivot and loop back to step 3.
+9.  **Deliver Results**: Use the [Brainstorm Template](./resources/brainstorm-template.md) for the final output.
 
-## Guidelines
+- **Guidelines**
+- **Narrow the Scope Early**: Avoid deep-diving into a single idea until the user has seen and approved a concise shortlist. This saves time and ensures alignment.
 - **Quantity over Quality (initially)**: Generate as many ideas as possible before filtering.
 - **De-risking**: Focus on high-impact, low-effort ideas or those that solve critical pain points.
+- **Human Collaboration**: 
+  - **Ask for Input**: If you are stuck or unsure of the direction, ask the user for suggestions or clarification.
+  - **Permission to Fail**: Not every brainstorming session leads to a perfect idea. It is okay to report that no viable ideas were found under certain constraints.
+  - **Validate Assumptions**: Before going deep into an idea, check with the user if the underlying assumptions are correct.
 - **Modularity**: Refer agents to specific files within this skill based on the task context.

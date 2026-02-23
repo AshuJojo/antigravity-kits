@@ -2,21 +2,33 @@
 
 Follow these steps to conduct a comprehensive brainstorming session.
 
-## Phase 1: Preparation
-1.  **Define the Problem/Opportunity**: State the goal in one sentence.
-2.  **Gather Context**: List existing constraints, target audience, and current solutions.
+## Phase 1: Preparation & Context
+1.  **Define the Goal**: State the objective in one sentence.
+2.  **Context Injection**: Search [Knowledge Items (KIs)](./../resources/context-integration.md) and past logs for relevant project constraints and user preferences.
+3.  **List Constraints**: Clearly state what's *not* possible to focus the search space.
 
 ## Phase 2: Divergence (Idea Generation)
 // turbo
-1.  **Rapid Fire**: Spend 2-3 minutes generating as many raw ideas as possible. List them without judgment.
-2.  **Framework Application**: Use a framework from [frameworks.md](./../resources/frameworks.md) to look at the problem from new angles.
-3.  **Analogous Thinking**: How would a completely different industry (e.g., gaming, healthcare, aerospace) solve this?
+1.  **Rapid Fire**: Spend 2-3 minutes generating raw ideas. List them without judgment.
+2.  **Persona Pressure**: Apply [Personas](./../resources/personas.md) (e.g., The Skeptic, The Visionary) to challenge the ideas.
+3.  **AI Pitfall Check**: Use [AI Pitfalls](./../resources/ai-pitfalls.md) to replace generic ideas with unique ones.
+4.  **Analogous Thinking**: Look at how unrelated industries would solve this.
 
-## Phase 3: Convergence (Selection & Refinement)
-1.  **Clustering**: Group similar ideas into themes.
-2.  **Filtering**: Apply the "Impact vs. Effort" matrix.
-3.  **Selection**: Pick the top 3-5 ideas for deeper exploration.
+## Phase 3: Selection & Narrowing (Search Space Management)
+1.  **Concise Shortlist**: Select 3-5 of the most promising ideas.
+2.  **Human Selection**: **STOP** and present these concise ideas (name + 1-sentence description) to the user.
+3.  **Refinement**: Ask the user which ideas they want to explore in depth or if they want to narrow the criteria.
 
-## Phase 4: Output
-1.  **Detailed Proposals**: Elaborate on the selected ideas (Features, Benefits, Implementation path).
-2.  **Action Plan**: Define the next steps to validate or prototype the best idea.
+## Phase 4: Output (Deep Dive)
+1.  **Detailed Proposals**: Elaborate *only* on the ideas selected by the user in Phase 3.
+2.  **Human Review**: Present the detailed findings to the user.
+3.  **Action Plan**: Define next steps for the selected path.
+
+## Phase 5: Iteration & Pivoting
+1.  **Feedback Analysis**: If the user dislikes all options, analyze why.
+2.  **Pivot**: Change a core assumption or constraint and **loop back to Phase 2**.
+3.  **Refine**: If the user likes an idea but has caveats, adjust the idea and re-present it.
+
+## Failure & Stuck States
+- If Phase 2 fails to produce meaningful ideas, **STOP** and ask the user for a new perspective or more context.
+- If Phase 3 results in no "Quick Wins" or "Big Bets", inform the user and suggest pivoting the objective.
