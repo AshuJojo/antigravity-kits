@@ -20,13 +20,15 @@ Look at the idea from six distinct perspectives:
 
 ## 3. Impact vs. Effort Matrix
 Plot ideas on a 2x2 grid:
-- **Quick Wins**: High Impact, Low Effort. (Priority 1)
-- **Big Bets**: High Impact, High Effort. (Priority 2)
-- **Fill-ins**: Low Impact, Low Effort. (Priority 3)
+- **Quick Wins (Priority 1)**: High Impact, Low Effort. These are most valuable when combined with High Tech Leverage.
+- **Big Bets**: High Impact, High Effort, High Tech Leverage.
+- **Fill-ins**: Low Impact, Low Effort.
 - **Thankless Tasks**: Low Impact, High Effort. (Avoid)
 
-## 4. The NUF Test
+## 4. The NUFT Test
 Score each idea from 1-10 on:
 - **N**ew: Is it a fresh approach?
 - **U**seful: Does it actually solve the problem?
-- **F**easible: Can it actually be done?
+- **F**easible: Can it actually be done? (Low difficulty/Easy to build).
+- **T**ech Leverage: High tech dependency but low current adoption? (High tech edge).
+  - *Priority Rule*: For ideas with similar Tech Leverage, **Feasibility** is the tie-breaker. Favor lower difficulty.

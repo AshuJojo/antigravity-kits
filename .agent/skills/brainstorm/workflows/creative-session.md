@@ -11,8 +11,9 @@ Follow these steps to conduct a comprehensive brainstorming session.
 // turbo
 1.  **Rapid Fire**: Spend 2-3 minutes generating raw ideas. List them without judgment.
 2.  **Persona Pressure**: Apply [Personas](./../resources/personas.md) (e.g., The Skeptic, The Visionary) to challenge the ideas.
-3.  **AI Pitfall Check**: Use [AI Pitfalls](./../resources/ai-pitfalls.md) to replace generic ideas with unique ones.
-4.  **Analogous Thinking**: Look at how unrelated industries would solve this.
+3.  **AI Pitfall Check**: Use [AI Pitfalls](./../resources/ai-pitfalls.md) to replace generic ideas.
+4.  **Blue Ocean Lens**: Specifically look for industries with **low tech adaptation** where **high-tech solutions** could be disruptive (e.g., AI in traditional agriculture, Blockchain in logistics).
+5.  **Analogous Thinking**: Look at how unrelated industries would solve this.
 
 ## Phase 3: Selection & Narrowing (Search Space Management)
 1.  **Concise Shortlist**: Select 3-5 of the most promising ideas.
@@ -32,4 +33,4 @@ Follow these steps to conduct a comprehensive brainstorming session.
 
 ## Failure & Stuck States
 - If Phase 2 fails to produce meaningful ideas, **STOP** and ask the user for a new perspective or more context.
-- If Phase 3 results in no "Quick Wins" or "Big Bets", inform the user and suggest pivoting the objective.
+- If Phase 3 results in no "Quick Wins", consider "Big Bets". Always present the **easiest-to-build** impactful ideas first to the user.

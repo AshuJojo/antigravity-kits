@@ -9,9 +9,9 @@ This skill provides a structured framework for generating new ideas, expanding f
 
 ## Purpose
 Use this skill when the user asks for:
-- New product, feature, or business ideas.
-- Creative solutions to complex problems in any domain.
-- Expansion of existing concepts or projects.
+- New product, feature, or business ideas (regardless of the user's existing domain).
+- Creative solutions to complex problems in any industry.
+- Exploring high-tech opportunities with low current adaptation.
 - Structured brainstorming sessions.
 
 ## Skill Structure
@@ -42,7 +42,10 @@ The skill is modularized to provide specific guidance and examples:
 9.  **Deliver Results**: Use the [Brainstorm Template](./resources/brainstorm-template.md) for the final output.
 
 - **Guidelines**
-- **Narrow the Scope Early**: Avoid deep-diving into a single idea until the user has seen and approved a concise shortlist. This saves time and ensures alignment.
+- **Domain Expansion**: You are *not* restricted to the user's current known domain. Explore new industries and markets freely.
+- **Priority: Lean Tech Innovation**: Give highest priority to ideas that have **high tech dependency** (require advanced technology) but **low current tech adaptation**, while also being **low in implementation difficulty**.
+  - *Note*: Prioritize from **low to high difficulty**. A "Quick Tech Win" (Low Difficulty + High Leverage) is always preferred over a "Big Bet" (High Difficulty + High Leverage).
+- **Narrow the Scope Early**: Avoid deep-diving into a single idea until the user has seen and approved a concise shortlist.
 - **Quantity over Quality (initially)**: Generate as many ideas as possible before filtering.
 - **De-risking**: Focus on high-impact, low-effort ideas or those that solve critical pain points.
 - **Human Collaboration**: 
