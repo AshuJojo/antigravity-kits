@@ -32,6 +32,7 @@ The skill is modularized to provide specific guidance and examples:
 
 ## Strategy
 1.  **Project Context**: Use [Context Integration](./resources/context-integration.md) to ground the session in KIs and logs.
+    - **Expansion Check**: Before starting a new brainstorm, check if a `docs/` folder exists with previous ideas. If it does, **ask the user** if they want to brainstorm a *completely new* app idea or *expand/iterate*/create new version/edit on an existing project found in the docs.
 2.  **Identify the Objective**: Clearly define the brainstorming goal.
 3.  **Breadth First**: Use [Frameworks](./resources/frameworks.md) and [Personas](./resources/personas.md) to generate many concise ideas.
 4.  **Avoid Blandness**: Apply [AI Pitfalls](./resources/ai-pitfalls.md) strategies to ensure unique ideas.
@@ -62,4 +63,5 @@ The skill is modularized to provide specific guidance and examples:
     - `docs/<idea-name>/v1/summary.md`: Technical or operational summary of the first version.
   - **Detailed Explanations**: Document everything you brainstormed with as much detail as possible. Do not just summarize; explain the "how" and "why."
   - **MVP Priority**: Clearly define the Minimum Viable Product to ensure lean execution can follow.
+- **Tech-Stack Neutrality**: **Do not** include or suggest a specific technology stack (e.g., React, Python, AWS) unless it is strictly necessary for the core idea to function or if the user explicitly asks for it. Focus on functionality and value first.
 - **Modularity**: Refer agents to specific files within this skill based on the task context.

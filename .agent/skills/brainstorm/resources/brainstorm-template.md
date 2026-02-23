@@ -24,7 +24,7 @@ Use this template to present the final output of a brainstorming session for con
 ## 4. MVP (Minimum Viable Product)
 [Define the smallest version of this product that can be built to test the core value.]
 - **Core Workflow**: [Detailed steps for the MVP's main use case]
-- **MVP Technical Stack (if applicable)**: [Suggested stack for rapid prototyping]
+- **MVP Architectural Strategy (No tech stack)**: [Describe *how* it works logically, without naming specific tools unless requested/required.]
 
 ## 5. Comprehensive Feature List
 [List and describe all major features, even those beyond the MVP.]
