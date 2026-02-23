@@ -37,7 +37,7 @@ The skill is modularized to provide specific guidance and examples:
 4.  **Avoid Blandness**: Apply [AI Pitfalls](./resources/ai-pitfalls.md) strategies to ensure unique ideas.
 5.  **Narrow the Search**: Present 3-5 concise ideas to the user for selection.
 6.  **Human Selection**: **Wait** for user input before proceeding to depth.
-7.  **Depth Next**: Deep-dive only into the selected idea(s) using the [Creative Session](./workflows/creative-session.md) workflow.
+7.  **Depth Next**: Deep-dive only into the selected idea(s) using the [Creative Session](./workflows/creative-session.md) workflow, which includes comprehensive documentation.
 8.  **Evaluate & Iterate**: Use [Evaluation Frameworks](./resources/evaluation.md). If results are poor, use [Creative Blocks](./resources/creative-blocks.md) to pivot and loop back to step 3.
 9.  **Deliver Results**: Use the [Brainstorm Template](./resources/brainstorm-template.md) for the final output.
 
@@ -52,7 +52,14 @@ The skill is modularized to provide specific guidance and examples:
   - **Ask for Input**: If you are stuck or unsure of the direction, ask the user for suggestions or clarification.
   - **Permission to Fail**: Not every brainstorming session leads to a perfect idea. It is okay to report that no viable ideas were found under certain constraints.
   - **Validate Assumptions**: Before going deep into an idea, check with the user if the underlying assumptions are correct.
-- **Long-Term Persistence**: 
-  - **Create Documentation**: Whenever a brainstorming session concludes, or a significant pivot occurs, create a permanent record in a `.md` file within a root-level `docs/` folder (parallel to `.agent/`).
-  - **Future Reference**: Use these files for your own later work, to help future agents understand the project's evolution, and to provide the user with clear, persistent plans and summaries.
+- **Long-Term Persistence & Comprehensive Documentation**: 
+  - **Structured Folder Hierarchy**: Whenever a brainstorming session concludes, create a mandatory folder hierarchy under the root `docs/` folder:
+    - `docs/<idea-name>/plan.md`: High-level strategy and vision.
+    - `docs/<idea-name>/summary.md`: Concise overview for quick reading.
+    - `docs/<idea-name>/v1/features.md`: Detailed list of all proposed features.
+    - `docs/<idea-name>/v1/plan.md`: Step-by-step implementation plan for the first version/MVP.
+    - `docs/<idea-name>/v1/todo.md`: Actionable checklist.
+    - `docs/<idea-name>/v1/summary.md`: Technical or operational summary of the first version.
+  - **Detailed Explanations**: Document everything you brainstormed with as much detail as possible. Do not just summarize; explain the "how" and "why."
+  - **MVP Priority**: Clearly define the Minimum Viable Product to ensure lean execution can follow.
 - **Modularity**: Refer agents to specific files within this skill based on the task context.
