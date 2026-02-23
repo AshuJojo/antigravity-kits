@@ -19,10 +19,11 @@ Follow these steps to conduct a comprehensive brainstorming session.
 2.  **Human Selection**: **STOP** and present these concise ideas (name + 1-sentence description) to the user.
 3.  **Refinement**: Ask the user which ideas they want to explore in depth or if they want to narrow the criteria.
 
-## Phase 4: Output (Deep Dive)
+## Phase 4: Output (Deep Dive & Persistence)
 1.  **Detailed Proposals**: Elaborate *only* on the ideas selected by the user in Phase 3.
 2.  **Human Review**: Present the detailed findings to the user.
-3.  **Action Plan**: Define next steps for the selected path.
+3.  **Persist to Disk**: Create a new `.md` file in the root `docs/` folder (e.g., `docs/brainstorming/[project]-plan.md`) using the [Brainstorm Template](./../resources/brainstorm-template.md). This ensures the work is available for future AI sessions and user reference.
+4.  **Action Plan**: Define next steps for the selected path.
 
 ## Phase 5: Iteration & Pivoting
 1.  **Feedback Analysis**: If the user dislikes all options, analyze why.

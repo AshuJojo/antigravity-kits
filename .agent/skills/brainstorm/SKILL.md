@@ -49,4 +49,7 @@ The skill is modularized to provide specific guidance and examples:
   - **Ask for Input**: If you are stuck or unsure of the direction, ask the user for suggestions or clarification.
   - **Permission to Fail**: Not every brainstorming session leads to a perfect idea. It is okay to report that no viable ideas were found under certain constraints.
   - **Validate Assumptions**: Before going deep into an idea, check with the user if the underlying assumptions are correct.
+- **Long-Term Persistence**: 
+  - **Create Documentation**: Whenever a brainstorming session concludes, or a significant pivot occurs, create a permanent record in a `.md` file within a root-level `docs/` folder (parallel to `.agent/`).
+  - **Future Reference**: Use these files for your own later work, to help future agents understand the project's evolution, and to provide the user with clear, persistent plans and summaries.
 - **Modularity**: Refer agents to specific files within this skill based on the task context.
