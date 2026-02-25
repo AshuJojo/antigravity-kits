@@ -55,6 +55,7 @@ Structured guidance for building, debugging, and optimizing Next.js 16 + Tailwin
 - **`proxy.ts` replaces `middleware.ts`** — never generate `middleware.ts`. See [Routing](./resources/routing.md).
 - **React Compiler** — never add `useMemo`, `useCallback`, `React.memo`. Compiler handles memoization.
 - **Turbopack** — default bundler. Avoid webpack customization.
+- **Tailwind CSS by default for UI** — hand-craft all components with Tailwind. Use `cn()` from `src/lib/utils/cn.ts` for conditional class merging. Only use shadcn/ui or another component library if the user **explicitly requests it**.
 - **No raw `<img>`** — use `next/image`. **No raw `<a>` for internal links** — use `next/link`.
 - **`params`/`searchParams` are `Promise` in v16** — always `await`.
 - **`viewport` is a separate export** from `metadata` in v16.

@@ -65,9 +65,9 @@ Skills are passive knowledge bases — the agent reads them when needed. Each sk
 **Owns**: Auth.js setup, providers, session shape, `auth()` helper, `useSession`, JWT vs DB sessions, Prisma adapter schema additions.
 **Does NOT cover**: `proxy.ts` route protection patterns (→ `nextjs-tailwindcss-neon`), general Prisma setup (→ `nextjs-tailwindcss-neon`).
 
-#### `ui-system` — Design System with shadcn/ui + Tailwind
-**Owns**: `shadcn/ui` setup + component installation, Tailwind v4 design tokens (`@theme`), dark mode, `cn()` utility, form components with `react-hook-form`, accessible UI patterns.
-**Does NOT cover**: general Zod schemas (→ `nextjs-tailwindcss-neon`), form submission/Server Actions (→ `nextjs-tailwindcss-neon`), page-level layout (→ `nextjs-tailwindcss-neon`).
+#### `ui-system` — Design System with Tailwind CSS
+**Owns**: Tailwind CSS v4 design tokens (`@theme`), component library (buttons, inputs, cards, dialogs — built from scratch with Tailwind), dark mode, `cn()` utility, accessible UI patterns.
+**Does NOT cover**: shadcn/ui or any third-party component library — all UI is hand-crafted Tailwind. Form submission/Server Actions (→ `nextjs-tailwindcss-neon`), page-level layout (→ `nextjs-tailwindcss-neon`).
 
 #### `testing` — Testing Strategy
 **Owns**: Vitest setup + unit test patterns, API route integration tests, Playwright E2E, mocking Prisma, CI test commands, test file colocating.
@@ -221,7 +221,7 @@ Phase 1 — Foundation (do first)
 
 Phase 2 — Auth & UI
 ├── skills/auth                     ← every real app needs auth
-├── skills/ui-system                ← shadcn/ui + Tailwind v4
+├── skills/ui-system                ← Pure Tailwind CSS component system
 └── workflows/add-auth.md
 
 Phase 3 — Quality & Production

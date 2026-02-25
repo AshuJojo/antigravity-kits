@@ -18,6 +18,15 @@ These rules apply to **every task** across every skill and workflow. Skills refe
 - **Absolute imports**: always `@/` prefix. Never traverse more than one directory with relative paths.
 - **No `any`** — use `unknown` and narrow it, or define a proper type.
 
+## UI & Styling
+
+- **Tailwind CSS by default** — all UI is styled with Tailwind. Do not install shadcn/ui, Chakra UI, MUI, Ant Design, or any other component library unless the user **explicitly requests it**.
+- **Hand-craft all components** — buttons, inputs, cards, dialogs, modals etc. are built from scratch using Tailwind utility classes, unless the user explicitly asks for shadcn/ui.
+- **`cn()` helper always** — merge conditional classes using `clsx` + `tailwind-merge` via `src/lib/utils/cn.ts`. Never concatenate class strings manually.
+- **Tailwind v4 tokens** — define design tokens (colors, spacing, typography) in `@theme` inside `globals.css`. Avoid hardcoding values outside the theme.
+- **Dark mode** — use the `dark:` variant. Implement class-based dark mode (`darkMode: 'class'` in config).
+- **No inline styles** — use Tailwind classes. Exception: dynamic values that cannot be expressed as Tailwind classes (e.g. `style={{ height: dynamicPx }}`).
+
 ## Architecture
 
 - **SSR by default** — every page and component is a Server Component unless it explicitly needs client interactivity.
