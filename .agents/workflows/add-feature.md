@@ -78,10 +78,11 @@ Use this when adding a new data entity with full CRUD to an existing project (e.
    - Call `notFound()` if entity not found
    - Add `generateStaticParams()` if the entity list is bounded and known at build time
 
-9. Protect routes in `src/proxy.ts` if authentication is required:
+9. If the project uses authentication (Auth.js) and this feature needs protection, secure the route in `src/proxy.ts`:
    ```ts
    '/[feature]/:path*': async ({ request, next }) => { ... }
    ```
+   *If the project does not have authentication installed, skip this step.*
 
 ---
 

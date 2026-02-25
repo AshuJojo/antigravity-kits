@@ -15,8 +15,12 @@ These rules apply to **every task** across every skill and workflow. Skills refe
 - **Named exports** — except for Next.js pages and layouts (which require default exports).
 - **File names**: `kebab-case` (e.g. `user-card.tsx`, `user.service.ts`).
 - **Component names**: `PascalCase`. **Function/variable names**: `camelCase`.
-- **Absolute imports**: always `@/` prefix. Never traverse more than one directory with relative paths.
 - **No `any`** — use `unknown` and narrow it, or define a proper type.
+
+## Authentication (Optional)
+
+- **Authentication is NOT required by default.**
+- **If auth is requested or already exists in the project**, you MUST use **Auth.js (NextAuth v5)** and follow the `auth` skill. Do not use Clerk, Supabase Auth, or Firebase Auth unless the user explicitly requests them.
 
 ## UI & Styling
 
