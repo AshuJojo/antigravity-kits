@@ -6,7 +6,7 @@ description: Add or update Zustand global state for a feature in an existing Nex
 
 Use this when a feature introduces UI state that needs to be shared across 3+ unrelated client components.
 
-> **Skill reference**: [State Management](../skills/nextjs-tailwindcss-neon/resources/state-management.md)
+> **Skill reference**: [nextjs-tailwindcss-neon](../skills/nextjs-tailwindcss-neon/SKILL.md)
 > **Code reference**: [Zustand Store](../skills/nextjs-tailwindcss-neon/examples/zustand-store.md)
 > **Prerequisite**: Project bootstrapped via [create-project](./create-project.md)
 
@@ -22,7 +22,7 @@ Before writing any store code, answer these questions:
 | Is prop-drilling ≤ 2 levels? | Lift state to common parent. **Stop here.** |
 | Is state shared across a small, bounded subtree? | Use React Context. **Stop here.** |
 | Is state UI-only, shared across 3+ unrelated components? | **Continue below — Zustand.** |
-| Is state async / server-synced? | Use TanStack Query instead of Zustand. See [State Management](../skills/nextjs-tailwindcss-neon/resources/state-management.md). |
+| Is state async / server-synced? | Use TanStack Query instead of Zustand. |
 
 > Never put server-fetched data (DB records, API responses) in a Zustand store. That belongs in `use cache` or React Query.
 
