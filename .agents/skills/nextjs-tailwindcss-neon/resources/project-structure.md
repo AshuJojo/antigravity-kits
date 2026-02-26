@@ -43,69 +43,48 @@ my-app/
 │   │       └── webhooks/
 │   │           └── stripe/route.ts             ← External webhooks
 │   │
-│   ├── components/                             ← All React components
+│   ├── components/                             ← Global shared components & feature modules
+│   │   ├── features/                           ← Business domains (Feature-Sliced Design)
+│   │   │   └── users/
+│   │   │       ├── components/                 ← Feature-specific UI
+│   │   │       │   ├── user-card.tsx
+│   │   │       │   └── user-form.tsx
+│   │   │       ├── __tests__/                  ← Colocated feature tests (Vitest)
+│   │   │       │   ├── actions.test.ts
+│   │   │       │   └── services.test.ts
+│   │   │       ├── actions.ts                  ← Server Actions for users
+│   │   │       ├── services.ts                 ← DB queries for users
+│   │   │       ├── validations.ts              ← Zod schemas
+│   │   │       └── types.ts                    ← Types/Interfaces
 │   │   ├── ui/                                 ← Primitive design-system atoms
 │   │   │   ├── button.tsx
-│   │   │   ├── input.tsx
-│   │   │   ├── card.tsx
-│   │   │   ├── badge.tsx
-│   │   │   ├── dialog.tsx
-│   │   │   ├── dropdown.tsx
-│   │   │   └── index.ts                        ← Re-exports all UI components
-│   │   ├── layout/                             ← Structural/page-level components
-│   │   │   ├── header.tsx
-│   │   │   ├── sidebar.tsx
-│   │   │   ├── footer.tsx
-│   │   │   └── page-header.tsx
-│   │   └── [feature]/                          ← Feature-scoped components
-│   │       ├── users/
-│   │       │   ├── user-card.tsx
-│   │       │   ├── user-table.tsx
-│   │       │   └── user-form.tsx
-│   │       └── dashboard/
-│   │           ├── stats-card.tsx
-│   │           └── activity-feed.tsx
+│   │   │   └── input.tsx
+│   │   └── layout/                             ← Structural/page-level components
+│   │       ├── header.tsx
+│   │       └── sidebar.tsx
 │   │
 │   ├── lib/                                    ← Core server-side utilities
 │   │   ├── db.ts                               ← Prisma client singleton
-│   │   ├── auth.ts                             ← Auth config & session helpers
-│   │   ├── validations/                        ← Zod schemas
-│   │   │   ├── user.schema.ts
-│   │   │   └── post.schema.ts
+│   │   ├── auth.ts                             ← Auth config
 │   │   └── utils/
 │   │       ├── format.ts                       ← Date, number, string formatters
-│   │       ├── cn.ts                           ← clsx + twMerge helper
-│   │       └── api.ts                          ← Server fetch helpers
+│   │       └── cn.ts                           ← clsx + twMerge helper
 │   │
-│   ├── actions/                                ← Server Actions ('use server')
-│   │   ├── user.actions.ts
-│   │   ├── post.actions.ts
-│   │   └── auth.actions.ts
-│   │
-│   ├── services/                               ← Business logic layer (pure functions)
-│   │   ├── user.service.ts                     ← DB queries for users
-│   │   ├── post.service.ts
-│   │   └── email.service.ts                    ← Email sending logic
-│   │
-│   ├── hooks/                                  ← Custom React hooks (client-only)
+│   ├── hooks/                                  ← Custom React hooks (client-only shared)
 │   │   ├── use-debounce.ts
-│   │   ├── use-media-query.ts
 │   │   └── use-toast.ts
 │   │
-│   ├── stores/                                 ← Client-side state (Zustand, Jotai, etc.)
-│   │   ├── ui.store.ts                         ← Modal open/close, sidebar state
+│   ├── stores/                                 ← Client-side global state (Zustand, etc.)
+│   │   ├── ui.store.ts
 │   │   └── user.store.ts
 │   │
 │   ├── providers/                              ← React context providers
 │   │   ├── index.tsx                           ← Composes all providers into one
-│   │   ├── theme-provider.tsx
+│   │   └── theme-provider.tsx
 │   │   └── query-provider.tsx                  ← React Query client provider
 │   │
-│   ├── types/                                  ← Global TypeScript types & interfaces
-│   │   ├── index.ts                            ← Re-exports everything
-│   │   ├── api.types.ts                        ← API request/response shapes
-│   │   ├── user.types.ts
-│   │   └── next.types.ts                       ← Augmented Next.js types
+│   ├── types/                                  ← Global shared types ONLY
+│   │   └── index.ts                            ← Re-exports everything
 │   │
 │   └── config/                                 ← App-level constants
 │       ├── site.ts                             ← Site name, URL, nav links
@@ -122,14 +101,8 @@ my-app/
 │   └── fonts/                                  ← Self-hosted fonts (fallback)
 │
 ├── tests/                                      ← Test suite (mirrors src/ structure)
-│   ├── unit/
-│   │   └── services/
-│   │       └── user.service.test.ts
-│   ├── integration/
-│   │   └── api/
-│   │       └── users.test.ts
-│   └── e2e/
-│       └── auth.spec.ts                        ← Playwright tests
+│   ├── e2e/                                    ← End-to-End Tests (Playwright)
+│       └── auth.spec.ts
 │
 ├── next.config.ts
 ├── tailwind.config.ts
@@ -144,25 +117,21 @@ my-app/
 
 | Layer | Folder | Responsibility |
 |---|---|---|
-| Routing & UI | `app/` | Pages, layouts, loading/error states — all **Server Components** |
-| Components | `components/` | Reusable UI — Server by default, `'use client'` only at interactive leaves |
-| Actions | `actions/` | Server Actions — thin: validate → call service → revalidate |
-| Services | `services/` | Business logic & all Prisma DB queries — pure functions, no React |
-| Library | `lib/` | Low-level utilities, auth config, Zod schemas |
-| State | `stores/` + `providers/` | Client-side global state only |
-| Types | `types/` | Shared interfaces — never import from `@prisma/client` directly |
-| Config | `config/` | Constants, site metadata, nav links |
+| Routing & App Shell | `app/` | Pages, layouts, routing structure. **Server Components only** (except leaves). |
+| Features (FSD) | `components/features/` | Core business logic grouped by domain. Contains actions, services, and local UI. |
+| Global UI | `components/` | Shared dumb UI primitives (`components/ui/`) and global layout shells (`components/layout/`). |
+| Utilities | `lib/` | Low-level utilities, DB singleton, system config. |
 
-> **Data flow rule**: Page → **Actions** → **Services** → **`lib/db`**. Nothing skips a layer.
+> **Data flow rule**: Page → Feature **Actions** → Feature **Services** → `lib/db`. Nothing skips a layer.
 
-## Modularization Rules
+## Modularization Rules (Feature-Sliced Design)
 
+- **Domain-Driven Grouping** — Files belong in `src/components/features/[entity]/` (like `users/`, `billing/`). Do NOT scatter files across top-level `actions/`, `services/`, etc folders.
+- **Strict Boundaries** — A feature should only expose what other parts of the app need. `src/components/features/billing` cannot directly import `src/components/features/users/services.ts` unless it is an explicitly shared export.
+- **Test Colocation in Folders** — Unit tests for feature services belong inside a `__tests__/` folder within that feature module.
 - **One component per file** — no barrel files that mix unrelated components.
-- **One concern per module** — a service file only contains DB queries for one entity; a utility file only contains one category of helpers.
-- **Pages are thin** — a `page.tsx` should only: fetch data (via service or `use cache`), pass it to components, and define the page's `metadata`. No UI logic inline.
-- **Split Client Components from Server Components** — if a component has both server logic and interactive parts, extract the interactive part into a separate `*-client.tsx` file marked `'use client'`.
-- **Colocate feature components** — components used only in one feature live in `components/[feature]/`; globally shared components live in `components/ui/`.
-- **No cross-layer imports** — `services/` never imports from `actions/`; `components/` never imports from `services/` directly (go through actions or props).
+- **Pages are thin composition layers** — `app/**/page.tsx` only: fetches data via a feature service (or `use cache`), passes it to feature components, and defines `metadata`. No UI logic inline.
+- **Isolate Client Components** — Keep `'use client'` strictly at the interactive leaf nodes inside feature component folders.
 
 ## Key Files — Examples
 

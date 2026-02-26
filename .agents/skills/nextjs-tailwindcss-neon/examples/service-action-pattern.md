@@ -3,7 +3,7 @@
 Demonstrates the recommended data-flow layer in a scalable Next.js project:
 **Component → Server Action → Service → `lib/db`**
 
-## `src/lib/validations/user.schema.ts` — Zod Schema
+## `src/components/features/users/validations.ts` — Zod Schema
 
 ```ts
 import { z } from 'zod'
@@ -16,13 +16,13 @@ export const createUserSchema = z.object({
 export type CreateUserInput = z.infer<typeof createUserSchema>
 ```
 
-## `src/services/user.service.ts` — Business Logic Layer
+## `src/components/features/users/services.ts` — Business Logic Layer
 
-Services own all DB queries. Actions and API routes call services — never `db` directly.
+Services own all DB queries. Actions and API routes call services within this feature — never `db` directly.
 
 ```ts
 import { db } from '@/lib/db'
-import type { CreateUserInput } from '@/lib/validations/user.schema'
+import type { CreateUserInput } from './validations'
 
 export async function getUserById(id: string) {
   return db.user.findUnique({ where: { id } })
@@ -53,7 +53,7 @@ export async function deleteUser(id: string) {
 }
 ```
 
-## `src/actions/user.actions.ts` — Server Action Layer
+## `src/components/features/users/actions.ts` — Server Action Layer
 
 Actions are thin: validate input → call service → revalidate cache → return result.
 
@@ -61,8 +61,8 @@ Actions are thin: validate input → call service → revalidate cache → retur
 'use server'
 
 import { revalidatePath } from 'next/cache'
-import { createUser, deleteUser } from '@/services/user.service'
-import { createUserSchema } from '@/lib/validations/user.schema'
+import { createUser, deleteUser } from './services'
+import { createUserSchema } from './validations'
 
 export async function createUserAction(formData: FormData) {
   const parsed = createUserSchema.safeParse({
@@ -89,10 +89,10 @@ export async function deleteUserAction(id: string) {
 ## Using the Action in a Component
 
 ```tsx
-// src/components/users/user-form.tsx
+// src/components/features/users/components/user-form.tsx
 'use client'
 
-import { createUserAction } from '@/actions/user.actions'
+import { createUserAction } from '../actions'
 import { useFormState } from 'react-dom'
 
 const initialState = { error: null }

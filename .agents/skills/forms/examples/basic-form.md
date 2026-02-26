@@ -2,7 +2,7 @@
 
 This is the standard pattern for a `react-hook-form` form using `zod` for validation, integrating tightly with a Server Action, and using a React transition for the pending state.
 
-## 1. The Schema (`src/lib/validations/user.schema.ts`)
+## 1. The Schema (`src/components/features/users/validations.ts`)
 
 ```ts
 import { z } from "zod"
@@ -15,13 +15,13 @@ export const userFormSchema = z.object({
 export type UserFormValues = z.infer<typeof userFormSchema>
 ```
 
-## 2. The Server Action (`src/actions/user.actions.ts`)
+## 2. The Server Action (`src/components/features/users/actions.ts`)
 
 ```ts
 "use server"
 
-import { userFormSchema } from "@/lib/validations/user.schema"
-import { createUserService } from "@/services/user.service"
+import { userFormSchema } from "./validations"
+import { createUserService } from "./services"
 import { revalidatePath } from "next/cache"
 
 export async function createUser(data: unknown) {
@@ -47,7 +47,7 @@ export async function createUser(data: unknown) {
 }
 ```
 
-## 3. The Client Form (`src/components/forms/user-form.tsx`)
+## 3. The Client Form (`src/components/features/users/components/user-form.tsx`)
 
 ```tsx
 "use client"
@@ -55,8 +55,8 @@ export async function createUser(data: unknown) {
 import * as React from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { userFormSchema, type UserFormValues } from "@/lib/validations/user.schema"
-import { createUser } from "@/actions/user.actions"
+import { userFormSchema, type UserFormValues } from "../validations"
+import { createUser } from "../actions"
 
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
