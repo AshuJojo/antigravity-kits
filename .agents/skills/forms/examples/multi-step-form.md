@@ -2,7 +2,7 @@
 
 Handling multi-step wizards requires holding progressive state on the client until the final step. Here is the pattern using a single `useForm` instance spanning multiple render views.
 
-## 1. Schema (`src/lib/validations/wizard.schema.ts`)
+## 1. Schema (`src/components/features/wizard/validations.ts`)
 
 ```ts
 import { z } from "zod"

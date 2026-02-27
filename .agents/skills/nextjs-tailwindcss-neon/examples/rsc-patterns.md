@@ -113,7 +113,7 @@ function SortedList({ items }: { items: string[] }) {
 ## Server Actions (`'use server'`)
 
 ```tsx
-// src/actions/contact.actions.ts
+// src/components/features/contact/actions.ts
 'use server'
 
 import { db } from '@/lib/db'

@@ -140,7 +140,7 @@ Rather than duplicating code here, refer to the dedicated example files:
 | File(s) | Example |
 |---|---|
 | `src/lib/db.ts`, `prisma/schema.prisma`, `.env.local` | [Prisma + NeonDB Setup](../examples/prisma-neondb-setup.md) |
-| `src/services/*.ts`, `src/actions/*.ts`, `src/lib/validations/*.ts` | [Service + Action Pattern](../examples/service-action-pattern.md) |
+| `src/components/features/[entity]/services.ts`, `actions.ts`, `validations.ts` | [Service + Action Pattern](../examples/service-action-pattern.md) |
 | `tailwind.config.ts`, `tsconfig.json`, `next.config.ts`, `src/lib/utils/cn.ts`, `src/config/site.ts`, `src/providers/`, `src/proxy.ts` | [Project Config Boilerplate](../examples/project-config.md) |
 | `src/app/layout.tsx`, `src/app/page.tsx`, `src/components/like-button.tsx` | [Basic Page](../examples/basic-page.md) |
 

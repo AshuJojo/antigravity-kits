@@ -1,6 +1,5 @@
 ---
 trigger: always_on
-glob:
 description: Universal code style, architecture, state management, and quality rules for all Next.js + Tailwind + Prisma + NeonDB projects.
 ---
 
@@ -48,8 +47,7 @@ These rules apply to **every task** across every skill and workflow. Skills refe
 |---|---|---|
 | Pages & layouts | `src/app/` | Server Components only |
 | Reusable UI | `src/components/` | Server by default; `'use client'` only at interactive leaves |
-| Server mutations | `src/actions/` | Thin: validate → service → revalidate cache |
-| Business logic + DB | `src/services/` | Pure functions, no React — all Prisma calls live here |
+| Feature modules (FSD) | `src/components/features/[entity]/` | Owns `actions.ts`, `services.ts`, `validations.ts`, `types.ts`, and feature-specific components. Domain boundary is strict. |
 | Utilities & config | `src/lib/` | No side effects, no DB |
 | Global UI state | `src/stores/` | Client-only, UI state only (no DB-backed data) |
 | Types | `src/types/` | Re-export here — never import directly from `@prisma/client` |
@@ -57,7 +55,7 @@ These rules apply to **every task** across every skill and workflow. Skills refe
 ## State Management
 
 - **Default**: props and Server Components.
-- **Escalation**: props → lift to parent → React Context → Zustand/Jotai.
+- **Escalation**: props → lift to parent → Zustand/Jotai.
 - **Add global state only when**: the same client UI state is needed in 3+ unrelated components.
 - **Stores hold UI state only** — `isModalOpen`, `sidebarCollapsed`, `theme`. Never DB records.
 - **No store access in Server Components** — ever.

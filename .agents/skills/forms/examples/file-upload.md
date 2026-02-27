@@ -2,7 +2,7 @@
 
 Handling file uploads in Next.js Server Actions requires passing native `FormData` rather than a serialized JSON payload, as files cannot be JSON serialized.
 
-## 1. Zod Schema (`src/lib/validations/upload.schema.ts`)
+## 1. Zod Schema (`src/components/features/uploads/validations.ts`)
 
 ```ts
 import { z } from "zod"
@@ -22,7 +22,7 @@ export const uploadSchema = z.object({
 })
 ```
 
-## 2. Server Action (`src/actions/upload.actions.ts`)
+## 2. Server Action (`src/components/features/uploads/actions.ts`)
 
 When accepting files, the action must take `FormData` directly.
 

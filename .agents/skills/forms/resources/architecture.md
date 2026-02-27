@@ -4,7 +4,7 @@ The standard form architecture tightly integrates client-side interactivity with
 
 ## The Data Flow Checklist
 
-1. **Shared Zod Schema**: Defines the precise shape and constraints of the data. Located in `src/lib/validations/[entity].schema.ts`.
+1. **Shared Zod Schema**: Defines the precise shape and constraints of the data. Located in `src/components/features/[entity]/validations.ts`.
 2. **Client Form (RHF)**: A Client Component (`'use client'`) that uses `useForm` with a zod resolver to enforce client-side validation, update UI state, and prevent invalid requests from hitting the server.
 3. **Server Action**: An asynchronous function (`'use server'`) that receives the form data, re-validates it against the exact same Zod schema, performs the database mutation (via the Service layer), and `revalidatePath` / `revalidateTag` to update the UI on success.
 

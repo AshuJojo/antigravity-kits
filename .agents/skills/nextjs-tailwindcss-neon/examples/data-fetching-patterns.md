@@ -68,7 +68,7 @@ const products = await fetch('https://api.example.com/products', {
 ## On-Demand Cache Invalidation
 
 ```ts
-// src/actions/product.actions.ts
+// src/components/features/products/actions.ts
 'use server'
 
 import { revalidateTag, revalidatePath } from 'next/cache'

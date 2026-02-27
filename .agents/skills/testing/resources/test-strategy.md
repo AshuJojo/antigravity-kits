@@ -5,12 +5,12 @@ Our testing approach separates logic verification from UI verification to maximi
 ## The Two Tiers of Testing
 
 ### 1. Vitest (Unit / Integration)
-- **Target**: `src/services/*` and `src/lib/*`. 
+- **Target**: `src/components/features/*/services.ts`, `src/components/features/*/actions.ts`, and `src/lib/*`.
 - **Methodology**: Fast execution, deep mocked dependencies. The primary goal is verifying business logic, edge cases, and data transformation.
 - **Avoid**: Testing UI components or routing changes. Do not use React Testing Library.
 
 ### 2. Playwright (End-to-End)
-- **Target**: The full integrated stack (`src/app/*` + `src/actions/*`).
+- **Target**: The full integrated stack (`src/app/*` + `src/components/features/*`).
 - **Methodology**: Spin up the actual application with a real database. Simulate user clicks and inputs.
 - **Rule of thumb**: If the test requires verifying that clicking a button opens a modal or navigates to a new page, it belongs in Playwright.
 

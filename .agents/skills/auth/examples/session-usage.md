@@ -44,7 +44,7 @@ export async function UserNav() {
 Protect mutations by checking the user's ID or Role immediately.
 
 ```ts
-// src/actions/post.actions.ts
+// src/components/features/posts/actions.ts
 "use server"
 
 import { auth } from "@/lib/auth"

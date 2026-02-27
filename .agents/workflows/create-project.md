@@ -46,9 +46,10 @@ npx prisma init
 
    Create the top-level directories now:
    ```bash
-   mkdir -p src/actions src/services src/hooks src/stores src/types src/config src/providers
-   mkdir -p src/lib/validations src/lib/utils
-   mkdir -p src/components/ui src/components/layout
+   mkdir -p src/components/features src/components/ui src/components/layout
+   mkdir -p src/hooks src/stores src/types src/config src/providers
+   mkdir -p src/lib/utils
+   mkdir -p tests/e2e
    ```
 
 5. Set up root layout with Providers and fonts:

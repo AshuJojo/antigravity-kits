@@ -21,7 +21,7 @@ Structured guidance for implementing robust, accessible, and type-safe forms in 
 
 ## Strategy
 
-1. **Schema first** → Define the `zod` schema in `src/lib/validations/` before writing any UI or Action code. (See `nextjs-tailwindcss-neon` skill).
+1. **Schema first** → Define the `zod` schema in `src/components/features/[entity]/validations.ts` before writing any UI or Action code. (See `nextjs-tailwindcss-neon` skill).
 2. **Client-side validation** → Always use `react-hook-form` paired with `@hookform/resolvers/zod` to validate input interactively before hitting the server.
 3. **Server-side execution** → Submit the validated data to a Server Action. The Server Action *must* re-validate the data using the same `zod` schema to ensure security.
 4. **Use native form components** → Build the form using the handcrafted UI primitives from the `ui-system` skill (`Input`, `Label`, `Button`).
